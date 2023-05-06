@@ -7,7 +7,9 @@
     <title>number app</title>
     <style>
         body{
-            height: 200px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
         }
         #container{
             height: 100%;
@@ -15,8 +17,9 @@
             display: grid;
             grid-template-columns:  repeat(2,1fr);
             grid-template-areas: 
-            "input reset"
+            "input input"
             "plus minus";
+            margin-bottom: 10px;
         }
         input[type="text"]{
             grid-area: input;
@@ -32,7 +35,10 @@
             background-color: rgb(121, 121, 120);
         }
         #reset{
-            grid-area: reset ;
+            font-size: 30px;
+            margin-bottom: 10px;
+            height: 200px;
+            border-bottom: 5px solid black;
         }
         #increase{
             grid-area: plus ;
@@ -45,10 +51,15 @@
 <body>
     <div id="container">
             <input type="text" name="" id="number" value="0">
-            <input type="button" value="Reset" id="reset">
-            <input type="button" value="+" id="increase">
+            <input type="button" value="+" id="increase" >
             <input type="button" value="-" id="decrease">
     </div>
+    <input type="button" value="Reset" id="reset">
+    <div id="container">
+        <input type="text" name="" id="number1" value="0">
+        <input type="button" value="+" id="increase1">
+        <input type="button" value="-" id="decrease1">
+</div>
     <script src="main.js"></script>
 </body>
 </html>
