@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number app</title>
+    <style>
+        body{
+            height: 200px;
+        }
+        #container{
+            height: 100%;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns:  repeat(2,1fr);
+            grid-template-areas: 
+            "input reset"
+            "plus minus";
+        }
+        input[type="text"]{
+            grid-area: input;
+            font-size: 30px;
+        }
+        input[type="button"]{
+            color: blue;
+            background-color: rgb(61, 61, 59);
+            font-size: 30px;
+        }
+        input[type="button"]:active{
+            color: lightblue;
+            background-color: rgb(121, 121, 120);
+        }
+        #reset{
+            grid-area: reset ;
+        }
+        #increase{
+            grid-area: plus ;
+        }
+        #decrease{
+            grid-area: minus;
+        }
+</style>
+</head>
+<body>
+    <div id="container">
+            <input type="text" name="" id="number" value="0">
+            <input type="button" value="Reset" id="reset">
+            <input type="button" value="+" id="increase">
+            <input type="button" value="-" id="decrease">
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

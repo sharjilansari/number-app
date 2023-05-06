@@ -1,0 +1,1 @@
+simple app that increase number when clicked on + button and decreases number when clicked on - button using html, css and javascript
