@@ -9,7 +9,10 @@ const reset = document.querySelector("#reset");
 const cnt = document.querySelector("#container");
 const radio = document.querySelector("#rd-btn");
 const radio1 = document.querySelector("#rd-btn1");
-
+const label = document.querySelector("#label");
+const label1 = document.querySelector("#label1");
+label.appendChild(document.createTextNode(''));
+label1.appendChild(document.createTextNode(''));
 //creating functions
 reset.addEventListener('click', (e) => {
     number.value = 0;
@@ -68,6 +71,8 @@ function revert(){
     minus1.style.backgroundColor = '';
     radio.checked = '';
     radio1.checked = '';
+    label.textContent = 'unchecked';
+    label1.textContent = 'unchecked';
 }
 
 function checkValues() {
@@ -86,8 +91,24 @@ function checkValues() {
 function checkRadio(){
     if(number.value >= 5){
         radio.checked = true;
+        label.textContent = 'checked';
     }
     else if(number1.value >= 5){
         radio1.checked = true;
+        label1.textContent = 'checked';
     }
 }
+
+radio.addEventListener('click', (e) => {
+    label.textContent = 'checked';
+});
+radio1.addEventListener('click', (e) => {
+    label1.textContent = 'checked';
+});
+
+radio.addEventListener('blur', (e) => {
+    label.textContent = 'unchecked';
+});
+radio1.addEventListener('blur', (e) => {
+    label1.textContent = 'unchecked';
+});
