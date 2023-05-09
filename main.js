@@ -6,6 +6,10 @@ const number1 = document.querySelector("#number1");
 const plus1 = document.querySelector("#increase1");
 const minus1 = document.querySelector("#decrease1");
 const reset = document.querySelector("#reset");
+const cnt = document.querySelector("#container");
+const radio = document.querySelector("#rd-btn");
+const radio1 = document.querySelector("#rd-btn1");
+
 //creating functions
 reset.addEventListener('click', (e) => {
     number.value = 0;
@@ -20,6 +24,8 @@ plus.addEventListener('click', (e) => {
         number.value++;
     localStorage.setItem('number',number.value);
     checkValues();
+    checkRadio();
+
 } );
 
 minus.addEventListener('click', (e) => {
@@ -35,6 +41,7 @@ plus1.addEventListener('click', (e) => {
     number1.value++;
     localStorage.setItem('number1',number1.value);
     checkValues();
+    checkRadio();
 } );
 
 minus1.addEventListener('click', (e) => {
@@ -59,6 +66,8 @@ function revert(){
     minus.style.backgroundColor = '';
     plus1.style.backgroundColor = '';
     minus1.style.backgroundColor = '';
+    radio.checked = '';
+    radio1.checked = '';
 }
 
 function checkValues() {
@@ -74,3 +83,11 @@ function checkValues() {
     }
 }
 
+function checkRadio(){
+    if(number.value >= 5){
+        radio.checked = true;
+    }
+    else if(number1.value >= 5){
+        radio1.checked = true;
+    }
+}
